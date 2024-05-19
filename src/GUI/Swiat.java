@@ -46,6 +46,11 @@ public class Swiat extends JFrame implements KeyListener{
             odczytZPliku.dodajZwierzetaZPliku(this);
         }
         else{
+
+            LosowanieZwierzat losowanieZwierzat = new LosowanieZwierzat(this);
+            losowanieZwierzat.losuj();
+
+            /*
             DodajOrganizm(new Owca(5,5,this));
 
             DodajOrganizm(new Owca(4,3,this));
@@ -53,10 +58,8 @@ public class Swiat extends JFrame implements KeyListener{
             DodajOrganizm(new Owca(9,9,this));
             DodajOrganizm(new Wilk(3,1,this));
             //DodajOrganizm(new Zolw(1,1,this));
-            //DodajOrganizm(new Barszcz_Sosnowskiego(3,3,this));
+            //DodajOrganizm(new Barszcz_Sosnowskiego(3,3,this)); */
         }
-        System.out.println(this.wysokoscPlanszy);
-
 
         int szerokoscPanelu = this.szerokoscPlanszy * kwadratSize;
         int wysokoscPanelu = this.wysokoscPlanszy * kwadratSize;
@@ -340,20 +343,4 @@ public class Swiat extends JFrame implements KeyListener{
     }
 //---------------------------------------------------------------------------
 
-
-
-
-
-
-    public void WyswietlZmarle(Organizm org) {
-        // Implement display logic for dead organisms
-    }
-
-    public void Wyswietl(Organizm org) {
-        // Implement display logic for living organisms
-    }
-
-    public void rysujSwiatZpliku(String filename) {
-        // Implement drawing logic from file
-    }
 }
