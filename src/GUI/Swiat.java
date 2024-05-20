@@ -11,6 +11,7 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
+import java.awt.event.*;
 
 
 
@@ -95,6 +96,17 @@ public class Swiat extends JFrame implements KeyListener{
                     JLabel squareLabel = new JLabel(scaledSquareIcon);
                     squareLabel.setPreferredSize(new Dimension(kwadratSize, kwadratSize));
                     labels[i][j] = squareLabel;
+
+                    Swiat swiatInstance = this;
+                    labels[i][j].addMouseListener(new MouseAdapter() {
+                        @Override
+                        public void mouseClicked(MouseEvent e) {
+                           DodajOrganizm(new Wilk(3,1,swiatInstance));
+                           // to do
+
+                           rysujSwiatbezTury();
+                        }
+                    });
                 }
             }
 
@@ -150,6 +162,23 @@ public class Swiat extends JFrame implements KeyListener{
        wykonajTure();
         for (int i = 1; i <= wysokoscPlanszy; i++) {
             for (int j = 1; j <= szerokoscPlanszy; j++) {
+                JPanel cellPanel = new JPanel(new BorderLayout());
+                cellPanel.add(labels[i][j], BorderLayout.CENTER);
+
+                panel.add(cellPanel);
+            }
+        }
+        add(panel);
+        System.out.println("Rysowanie zakończone");
+    }
+    public void rysujSwiatbezTury() {
+        JPanel panel = new JPanel(new GridLayout(wysokoscPlanszy, szerokoscPlanszy, 0, 0));
+        for (Organizm org : organizmy) {
+            org.rysowanie();
+        }
+        for (int i = 1; i <= wysokoscPlanszy; i++) {
+            for (int j = 1; j <= szerokoscPlanszy; j++) {
+
                 JPanel cellPanel = new JPanel(new BorderLayout());
                 cellPanel.add(labels[i][j], BorderLayout.CENTER);
 
