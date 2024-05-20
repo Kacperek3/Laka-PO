@@ -97,14 +97,13 @@ public class Swiat extends JFrame implements KeyListener{
                     squareLabel.setPreferredSize(new Dimension(kwadratSize, kwadratSize));
                     labels[i][j] = squareLabel;
 
-                    Swiat swiatInstance = this;
+                    Swiat kopiaSwiat = this; int kordynatI = i; int kordynatj = j;
                     labels[i][j].addMouseListener(new MouseAdapter() {
                         @Override
                         public void mouseClicked(MouseEvent e) {
-                           DodajOrganizm(new Wilk(3,1,swiatInstance));
-                           // to do
-
-                           rysujSwiatbezTury();
+                           DodawanieZwierzeciaFrame dodawanieZwierzeciaFrame =
+                                   new DodawanieZwierzeciaFrame(kopiaSwiat,kordynatI,kordynatj);
+                           dodawanieZwierzeciaFrame.setVisible(true);
                         }
                     });
                 }
