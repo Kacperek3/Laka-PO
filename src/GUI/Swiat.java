@@ -1,8 +1,15 @@
 package GUI;
 
+import modelOrganizmy.*;
+import modelOrganizmy.rosliny.*;
+import modelOrganizmy.zwierzeta.*;
+import pomocnicze.LosowanieZwierzat;
+import pomocnicze.OdczytZpliku;
+import pomocnicze.OrganizmyDoDodania;
+import pomocnicze.ZapisDoPliku;
+
 import javax.swing.*;
 import java.awt.*;
-import java.lang.annotation.Target;
 import java.util.ArrayList;
 import java.util.Random;
 import java.awt.event.ActionListener;
@@ -47,6 +54,7 @@ public class Swiat extends JFrame implements KeyListener{
             odczytZPliku.dodajZwierzetaZPliku(this);
         }
         else{
+            DodajOrganizm(new Czlowiek(1, 1, this));
             LosowanieZwierzat losowanieZwierzat = new LosowanieZwierzat(this);
             losowanieZwierzat.losuj();
         }
@@ -125,6 +133,7 @@ public class Swiat extends JFrame implements KeyListener{
                 }
                 else if (e.getKeyCode() == KeyEvent.VK_P) {
                     org.TarczaKliknieta = true;
+                    logiGry.log("Czlowiek wlaczyl tarcze alzura");
                 }
             }
         }
@@ -374,6 +383,9 @@ public class Swiat extends JFrame implements KeyListener{
     private void wypisanieLogow(Organizm org){
 
         switch (org.TypObiektu) {
+            case 0:
+                logiGry.log("Czlowiek poruszyl sie na: " + org.getPolozenieX() + " " + org.getPolozenieY());
+                break;
             case 1:
                 logiGry.log("Wilk poruszyl sie na: " + org.getPolozenieX() + " " + org.getPolozenieY());
                 break;

@@ -1,4 +1,8 @@
-package GUI;
+package pomocnicze;
+import GUI.Swiat;
+import modelOrganizmy.rosliny.*;
+import modelOrganizmy.zwierzeta.*;
+
 import java.util.Random;
 
 public class LosowanieZwierzat {
@@ -18,7 +22,6 @@ public class LosowanieZwierzat {
             int wylosowanyX = random.nextInt(swiat.getSzerokoscPlanszy()) + 1;
             int wylosowanyY = random.nextInt(swiat.getWysokoscPlanszy()) + 1;
 
-            // Sprawdzenie, czy na wylosowanej pozycji nie ma już organizmu
             if (swiat.wolneMiejsce(wylosowanyX, wylosowanyY)) {
                 switch (wylosowanyTypZwierzecia) {
                     case 1:
@@ -52,12 +55,9 @@ public class LosowanieZwierzat {
                         swiat.DodajOrganizm(new Barszcz_Sosnowskiego(wylosowanyX, wylosowanyY, swiat));
                         break;
                     default:
-                        // Domyślny przypadek
-                        System.out.println("Nieznany typ zwierzęcia: " + wylosowanyTypZwierzecia);
                         break;
                 }
             } else {
-                // Jeśli pole jest zajęte, zmniejszamy licznik i losujemy ponownie
                 i--;
             }
         }

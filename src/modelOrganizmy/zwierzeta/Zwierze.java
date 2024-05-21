@@ -1,8 +1,8 @@
-package modelOrganizmy;
+package modelOrganizmy.zwierzeta;
 
-import GUI.Organizm;
-import GUI.OrganizmyDoDodania;
+import pomocnicze.OrganizmyDoDodania;
 import GUI.Swiat;
+import modelOrganizmy.Organizm;
 
 import java.util.Random;
 

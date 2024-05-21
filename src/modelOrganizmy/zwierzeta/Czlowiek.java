@@ -1,6 +1,8 @@
-package GUI;
+package modelOrganizmy.zwierzeta;
 
-import modelOrganizmy.Zwierze;
+import GUI.Grafiki;
+import GUI.Swiat;
+import modelOrganizmy.Organizm;
 
 public class Czlowiek extends Zwierze {
     Grafiki grafika = new Grafiki();

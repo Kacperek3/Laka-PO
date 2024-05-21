@@ -1,4 +1,6 @@
-package GUI;
+package pomocnicze;
+
+import modelOrganizmy.Organizm;
 
 import java.io.BufferedWriter;
 import java.io.File;

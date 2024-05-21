@@ -1,6 +1,8 @@
-package GUI;
+package modelOrganizmy.zwierzeta;
 
-import modelOrganizmy.Zwierze;
+import GUI.Grafiki;
+import GUI.Swiat;
+import modelOrganizmy.Organizm;
 
 import java.util.Random;
 

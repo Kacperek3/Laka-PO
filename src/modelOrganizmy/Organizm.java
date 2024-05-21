@@ -1,5 +1,5 @@
-package GUI;
-import java.util.Random;
+package modelOrganizmy;
+import GUI.Swiat;
 
 
 public class Organizm {
@@ -21,14 +21,14 @@ public class Organizm {
     protected int sila;
     protected int inicjatywa;
     protected int wiek;
-    protected int polozenieX;
-    protected int polozenieY;
-    protected Swiat swiat;
+    public int polozenieX;
+    public int polozenieY;
+    public Swiat swiat;
 
     public int PozycjaXprzedRuszeniem;
     public int PozycjaYprzedRuszeniem;
-    protected int TarczaAlzura;
-    protected int TarczaCoolDown;
+    public int TarczaAlzura;
+    public int TarczaCoolDown;
     public int kierunekRuchu;
     public boolean TarczaKliknieta;
 

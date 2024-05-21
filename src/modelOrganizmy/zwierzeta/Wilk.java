@@ -1,6 +1,7 @@
-package GUI;
+package modelOrganizmy.zwierzeta;
 
-import modelOrganizmy.Zwierze;
+import GUI.Grafiki;
+import GUI.Swiat;
 
 public class Wilk extends Zwierze {
     Grafiki grafika = new Grafiki();

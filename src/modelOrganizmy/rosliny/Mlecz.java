@@ -1,4 +1,7 @@
-package GUI;
+package modelOrganizmy.rosliny;
+
+import pomocnicze.OrganizmyDoDodania;
+import GUI.Swiat;
 
 import java.util.Random;
 

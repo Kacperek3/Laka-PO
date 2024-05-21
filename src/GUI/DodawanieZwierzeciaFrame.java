@@ -1,5 +1,8 @@
 package GUI;
 
+import modelOrganizmy.rosliny.*;
+import modelOrganizmy.zwierzeta.*;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;

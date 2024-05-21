@@ -1,4 +1,4 @@
-package GUI;
+package pomocnicze;
 
 public class OrganizmyDoDodania {
     public int Typ;

@@ -1,4 +1,6 @@
-package GUI;
+package modelOrganizmy.rosliny;
+
+import GUI.Swiat;
 
 public class Trawa extends Roslina {
 

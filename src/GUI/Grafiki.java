@@ -4,9 +4,9 @@ import javax.swing.*;
 import java.awt.*;
 
 public class Grafiki {
-    private ImageIcon squareIcon = new ImageIcon(getClass().getResource("/Grafiki/kwadrat_plansza.png"));
-    private Image squareImage = squareIcon.getImage();
-    private Image scaledSquareImage = squareImage.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
+    public ImageIcon squareIcon = new ImageIcon(getClass().getResource("/Grafiki/kwadrat_plansza.png"));
+    public Image squareImage = squareIcon.getImage();
+    public Image scaledSquareImage = squareImage.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
     public ImageIcon scaledSquareIcon = new ImageIcon(scaledSquareImage);
 
     private ImageIcon wilkIkona = new ImageIcon(getClass().getResource("/Grafiki/wilk.jpg"));
@@ -66,6 +66,4 @@ public class Grafiki {
     private Image czlowiekZdjecie = czlowiekIkona.getImage();
     private Image przeskalowaneZdjecieCzlowieka = czlowiekZdjecie.getScaledInstance(30, 30, Image.SCALE_SMOOTH);
     public ImageIcon przeskalowanaIkonaCzlowieka = new ImageIcon(przeskalowaneZdjecieCzlowieka);
-
-
 }

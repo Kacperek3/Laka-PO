@@ -1,7 +1,11 @@
-package GUI;
+package pomocnicze;
+
+import GUI.Swiat;
+import modelOrganizmy.zwierzeta.*;
+import modelOrganizmy.rosliny.*;
+import modelOrganizmy.Organizm;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class OdczytZpliku {
@@ -45,6 +49,30 @@ public class OdczytZpliku {
                             break;
                         case 2:
                             swiat.DodajOrganizm(new Owca(xPoz, yPoz, swiat, typ, wiek, sila, liczbaDniBezplodnych, tarcza, tarczaCoolDown));
+                            break;
+                        case 3:
+                            swiat.DodajOrganizm(new Lis(xPoz, yPoz, swiat, typ, wiek, sila, liczbaDniBezplodnych, tarcza, tarczaCoolDown));
+                            break;
+                        case 4:
+                            swiat.DodajOrganizm(new Zolw(xPoz, yPoz, swiat, typ, wiek, sila, liczbaDniBezplodnych, tarcza, tarczaCoolDown));
+                            break;
+                        case 5:
+                            swiat.DodajOrganizm(new Antylopa(xPoz, yPoz, swiat, typ, wiek, sila, liczbaDniBezplodnych, tarcza, tarczaCoolDown));
+                            break;
+                        case 6:
+                            swiat.DodajOrganizm(new Trawa(xPoz, yPoz, swiat, typ, wiek, sila, liczbaDniBezplodnych, tarcza, tarczaCoolDown));
+                            break;
+                        case 7:
+                            swiat.DodajOrganizm(new Mlecz(xPoz, yPoz, swiat, typ, wiek, sila, liczbaDniBezplodnych, tarcza, tarczaCoolDown));
+                            break;
+                        case 8:
+                            swiat.DodajOrganizm(new Guarana(xPoz, yPoz, swiat, typ, wiek, sila, liczbaDniBezplodnych, tarcza, tarczaCoolDown));
+                            break;
+                        case 9:
+                            swiat.DodajOrganizm(new Wilcze_Jagody(xPoz, yPoz, swiat, typ, wiek, sila, liczbaDniBezplodnych, tarcza, tarczaCoolDown));
+                            break;
+                        case 10:
+                            swiat.DodajOrganizm(new Barszcz_Sosnowskiego(xPoz, yPoz, swiat, typ, wiek, sila, liczbaDniBezplodnych, tarcza, tarczaCoolDown));
                             break;
                     }
                 }
