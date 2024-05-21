@@ -69,9 +69,6 @@ public class DodawanieZwierzeciaFrame extends JFrame {
                         case "Barszcz Sosnowskiego":
                             swiat.DodajOrganizm(new Barszcz_Sosnowskiego(i, j, swiat));
                             break;
-                        default:
-                            System.out.println("Nieznany typ zwierzęcia: " + wybraneZwierze);
-                            break;
                     }
                     swiat.rysujSwiatbezTury();
                 }

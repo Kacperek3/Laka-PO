@@ -23,7 +23,8 @@ public class OkienkoOdczytZpliku extends JFrame {
             }
             else {
                 setVisible(false);
-                Swiat swiat = new Swiat(0,0, nazwaPliku);
+                LogiGry logiGry = new LogiGry();
+                Swiat swiat = new Swiat(0,0, nazwaPliku, logiGry);
                 swiat.setVisible(true);
                 swiat.rysujSwiat();
             }

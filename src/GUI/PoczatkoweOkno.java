@@ -8,6 +8,7 @@ import java.awt.event.ActionListener;
 public class PoczatkoweOkno extends JFrame {
 
     private Swiat lakaGUI; // Referencja do okna gry
+    private LogiGry logiGry;
 
     public PoczatkoweOkno() {
         setTitle("Podawanie Informacji");
@@ -31,9 +32,15 @@ public class PoczatkoweOkno extends JFrame {
                     int szPlanszy = Integer.parseInt(szPrzycisk_WysokoscPlanszy.getText());
 
                     setVisible(false);
-                    lakaGUI = new Swiat(wyPlanszy, szPlanszy, "");
+                    logiGry = new LogiGry();
+                    lakaGUI = new Swiat(wyPlanszy, szPlanszy, "", logiGry);
                     lakaGUI.setVisible(true);
                     lakaGUI.rysujSwiat();
+
+
+
+
+
                 } catch (NumberFormatException ex) {
                     JOptionPane.showMessageDialog(null, "Wprowadź poprawną liczbę całkowitą.", "Błąd", JOptionPane.ERROR_MESSAGE);
                 }

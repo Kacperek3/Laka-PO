@@ -27,17 +27,17 @@ public class Swiat extends JFrame implements KeyListener{
     Grafiki grafiki = new Grafiki();
     private ZapisDoPliku zapisDoPliku;
     private Random randomowaLiczba;
+    LogiGry logiGry;
 
 
-    public Swiat(int szerokoscPlanszy, int wysokoscPlanszy, String nazwaPliku) {
+    public Swiat(int szerokoscPlanszy, int wysokoscPlanszy, String nazwaPliku, LogiGry lGry) {
         this.szerokoscPlanszy = szerokoscPlanszy;
         this.wysokoscPlanszy = wysokoscPlanszy;
+        this.logiGry = lGry;
         randomowaLiczba = new Random();
 
         setTitle("Gra");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-
-
         organizmy = new ArrayList<>();
         rozmnazaneOrganizmy = new ArrayList<>();
 
@@ -47,19 +47,8 @@ public class Swiat extends JFrame implements KeyListener{
             odczytZPliku.dodajZwierzetaZPliku(this);
         }
         else{
-
             LosowanieZwierzat losowanieZwierzat = new LosowanieZwierzat(this);
             losowanieZwierzat.losuj();
-
-            /*
-            DodajOrganizm(new Owca(5,5,this));
-
-            DodajOrganizm(new Owca(4,3,this));
-            DodajOrganizm(new Owca(4,3,this));
-            DodajOrganizm(new Owca(9,9,this));
-            DodajOrganizm(new Wilk(3,1,this));
-            //DodajOrganizm(new Zolw(1,1,this));
-            //DodajOrganizm(new Barszcz_Sosnowskiego(3,3,this)); */
         }
 
         int szerokoscPanelu = this.szerokoscPlanszy * kwadratSize;
@@ -79,6 +68,7 @@ public class Swiat extends JFrame implements KeyListener{
         drawButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
+                logiGry.wyczysc();
                 rysujSwiat();
             }
         });
@@ -121,7 +111,6 @@ public class Swiat extends JFrame implements KeyListener{
     public void keyPressed(KeyEvent e) {
         for (Organizm org : organizmy) {
             if (org.TypObiektu == 0) {
-                System.out.println(org.TarczaAlzura);
                 if (e.getKeyCode() == KeyEvent.VK_UP) {
                     org.kierunekRuchu = 3;
                 }
@@ -157,8 +146,7 @@ public class Swiat extends JFrame implements KeyListener{
 
     public void rysujSwiat() {
         JPanel panel = new JPanel(new GridLayout(wysokoscPlanszy, szerokoscPlanszy, 0, 0));
-
-       wykonajTure();
+        wykonajTure();
         for (int i = 1; i <= wysokoscPlanszy; i++) {
             for (int j = 1; j <= szerokoscPlanszy; j++) {
                 JPanel cellPanel = new JPanel(new BorderLayout());
@@ -168,7 +156,6 @@ public class Swiat extends JFrame implements KeyListener{
             }
         }
         add(panel);
-        System.out.println("Rysowanie zakończone");
     }
     public void rysujSwiatbezTury() {
         JPanel panel = new JPanel(new GridLayout(wysokoscPlanszy, szerokoscPlanszy, 0, 0));
@@ -189,6 +176,7 @@ public class Swiat extends JFrame implements KeyListener{
     }
 
     public void wykonajTure() {
+
         organizmy.sort(new Comparator<Organizm>() {
             @Override
             public int compare(Organizm a, Organizm b) {
@@ -204,22 +192,25 @@ public class Swiat extends JFrame implements KeyListener{
         while (iterator.hasNext()) {
             Organizm org = iterator.next();
             if (org.getWiek() == -1) {
+                wypisanieLogowSmierc(org);
                 iterator.remove();
             } else {
                 labels[org.polozenieX][org.polozenieY].setIcon(grafiki.scaledSquareIcon);
 
                 org.akcja();
-
                 if(org.getWiek() == -1){
+                    wypisanieLogowSmierc(org);
                     iterator.remove();
                 }
                 else{
+                    wypisanieLogow(org);
                     org.rysowanie();
                     org.setWiek(org.getWiek() + 1);
                     if (org.liczbaDniBezplodnych != 0) org.liczbaDniBezplodnych--;
                 }
             }
         }
+
         for (OrganizmyDoDodania dodanyOrganizm : rozmnazaneOrganizmy) {
             switch (dodanyOrganizm.Typ) {
                 case 1:
@@ -367,6 +358,47 @@ public class Swiat extends JFrame implements KeyListener{
             return organizmy.get(pozycja);
         } else {
             return null;
+        }
+    }
+
+    private void wypisanieLogow(Organizm org){
+
+        switch (org.TypObiektu) {
+            case 1:
+                logiGry.log("Wilk poruszyl sie na: " + org.getPolozenieX() + " " + org.getPolozenieY());
+                break;
+            case 2:
+                logiGry.log("Owca poruszyla sie na: " + org.getPolozenieX() + " " + org.getPolozenieY());
+                break;
+            case 3:
+                logiGry.log("Lis poruszyl sie na: " + org.getPolozenieX() + " " + org.getPolozenieY());
+                break;
+            case 4:
+                logiGry.log("Zolw poruszyl sie na: " + org.getPolozenieX() + " " + org.getPolozenieY());
+                break;
+            case 5:
+                logiGry.log("Antylopa poruszyla sie na: " + org.getPolozenieX() + " " + org.getPolozenieY());
+                break;
+
+        }
+    }
+    private void wypisanieLogowSmierc(Organizm org) {
+        switch (org.TypObiektu) {
+            case 1:
+                logiGry.log("Wilk z pozycji " + org.getPolozenieX() + " " + org.getPolozenieY() + " zmarl");
+                break;
+            case 2:
+                logiGry.log("Owca z pozycji " + org.getPolozenieX() + " " + org.getPolozenieY() + " zmarla");
+                break;
+            case 3:
+                logiGry.log("Lis z pozycji " + org.getPolozenieX() + " " + org.getPolozenieY() + " zmarl");
+                break;
+            case 4:
+                logiGry.log("Zolw z pozycji " + org.getPolozenieX() + " " + org.getPolozenieY() + " zmarl");
+                break;
+            case 5:
+                logiGry.log("Antylopa z pozycji " + org.getPolozenieX() + " " + org.getPolozenieY() + " zmarla");
+                break;
         }
     }
 //---------------------------------------------------------------------------

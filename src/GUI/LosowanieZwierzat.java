@@ -18,8 +18,6 @@ public class LosowanieZwierzat {
             int wylosowanyX = random.nextInt(swiat.getSzerokoscPlanszy()) + 1;
             int wylosowanyY = random.nextInt(swiat.getWysokoscPlanszy()) + 1;
 
-            System.out.println("Wylosowano: " + wylosowanyTypZwierzecia + " na pozycji: " + wylosowanyX + " " + wylosowanyY);
-
             // Sprawdzenie, czy na wylosowanej pozycji nie ma już organizmu
             if (swiat.wolneMiejsce(wylosowanyX, wylosowanyY)) {
                 switch (wylosowanyTypZwierzecia) {
