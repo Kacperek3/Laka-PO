@@ -215,51 +215,61 @@ public class Swiat extends JFrame implements KeyListener{
             switch (dodanyOrganizm.Typ) {
                 case 1:
                     DodajOrganizm(new Wilk(dodanyOrganizm.xPos, dodanyOrganizm.yPos, this));
+                    logiGry.log("Wilk narodzil sie na: " + dodanyOrganizm.xPos + " " + dodanyOrganizm.yPos);
                     break;
                 case 2:
                     Owca owca = new Owca(dodanyOrganizm.xPos, dodanyOrganizm.yPos, this);
                     owca.rysowanie();
                     DodajOrganizm(owca);
+                    logiGry.log("Owca narodzila sie na: " + dodanyOrganizm.xPos + " " + dodanyOrganizm.yPos);
                     break;
                 case 3:
                     Lis lis = new Lis(dodanyOrganizm.xPos, dodanyOrganizm.yPos, this);
                     lis.rysowanie();
                     DodajOrganizm(lis);
+                    logiGry.log("Lis narodzil sie na: " + dodanyOrganizm.xPos + " " + dodanyOrganizm.yPos);
                     break;
                 case 4:
                     Zolw zolw = new Zolw(dodanyOrganizm.xPos, dodanyOrganizm.yPos, this);
                     zolw.rysowanie();
                     DodajOrganizm(zolw);
+                    logiGry.log("Zolw narodzil sie na: " + dodanyOrganizm.xPos + " " + dodanyOrganizm.yPos);
                     break;
                 case 5:
                     Antylopa antylopa = new Antylopa(dodanyOrganizm.xPos, dodanyOrganizm.yPos, this);
                     antylopa.rysowanie();
                     DodajOrganizm(antylopa);
+                    logiGry.log("Antylopa narodzila sie na: " + dodanyOrganizm.xPos + " " + dodanyOrganizm.yPos);
                     break;
                 case 6:
                     Trawa trawa = new Trawa(dodanyOrganizm.xPos, dodanyOrganizm.yPos, this);
                     trawa.rysowanie();
                     DodajOrganizm(trawa);
+                    logiGry.log("Trawa rozprzestrzenila sie na: " + dodanyOrganizm.xPos + " " + dodanyOrganizm.yPos);
                     break;
                 case 7:
                     Mlecz mlecz = new Mlecz(dodanyOrganizm.xPos, dodanyOrganizm.yPos, this);
                     mlecz.rysowanie();
                     DodajOrganizm(mlecz);
+                    logiGry.log("Mlecz rozprzestrzenil sie na: " + dodanyOrganizm.xPos + " " + dodanyOrganizm.yPos);
                     break;
                 case 8:
                     Guarana guarana = new Guarana(dodanyOrganizm.xPos, dodanyOrganizm.yPos, this);
                     guarana.rysowanie();
                     DodajOrganizm(guarana);
+                    logiGry.log("Guarana rozprzestrzenila sie na: " + dodanyOrganizm.xPos + " " + dodanyOrganizm.yPos);
                     break;
                 case 9:
                     Wilcze_Jagody wilcze_jagody = new Wilcze_Jagody(dodanyOrganizm.xPos, dodanyOrganizm.yPos, this);
                     wilcze_jagody.rysowanie();
                     DodajOrganizm(wilcze_jagody);
+                    logiGry.log("Wilcze Jagody rozprzestrzenily sie na: " + dodanyOrganizm.xPos + " " + dodanyOrganizm.yPos);
                     break;
                 case 10:
                     Barszcz_Sosnowskiego barszcz_sosnowskiego = new Barszcz_Sosnowskiego(dodanyOrganizm.xPos, dodanyOrganizm.yPos, this);
                     barszcz_sosnowskiego.rysowanie();
                     DodajOrganizm(barszcz_sosnowskiego);
+                    logiGry.log("Barszcz Sosnowskiego rozprzestrzenil sie na: " + dodanyOrganizm.xPos + " " + dodanyOrganizm.yPos);
                     break;
                 default:
                     break;

@@ -1,5 +1,7 @@
 package GUI;
 
+import modelOrganizmy.Zwierze;
+
 import java.util.Random;
 
 public class Zolw extends Zwierze {

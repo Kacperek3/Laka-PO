@@ -1,5 +1,7 @@
 package GUI;
 
+import modelOrganizmy.Zwierze;
+
 public class Czlowiek extends Zwierze {
     Grafiki grafika = new Grafiki();
 

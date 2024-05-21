@@ -1,7 +1,7 @@
 package GUI;
 
-import javax.swing.*;
-import java.awt.*;
+import modelOrganizmy.Zwierze;
+
 import java.util.Random;
 
 public class Lis extends Zwierze {

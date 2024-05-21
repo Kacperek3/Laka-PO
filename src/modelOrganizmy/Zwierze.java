@@ -1,8 +1,9 @@
-package GUI;
+package modelOrganizmy;
 
-import javax.swing.*;
-import java.awt.*;
-import java.util.ArrayList;
+import GUI.Organizm;
+import GUI.OrganizmyDoDodania;
+import GUI.Swiat;
+
 import java.util.Random;
 
 public class Zwierze extends Organizm {

@@ -1,7 +1,6 @@
 package GUI;
 
-import javax.swing.*;
-import java.awt.*;
+import modelOrganizmy.Zwierze;
 
 public class Owca extends Zwierze {
     Grafiki grafika = new Grafiki();
